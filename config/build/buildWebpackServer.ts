@@ -4,5 +4,6 @@ export function buildWebpackServer(options: BuildOptions): DevServConfiguration 
     return {
         port: options.port,
         static: options.paths.output,
+        historyApiFallback: true
     }
 }
