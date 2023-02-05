@@ -1,19 +1,15 @@
-import React, {Suspense, useState} from 'react';
+import React, {Suspense} from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import './styles/index.scss';
 import {AboutPageLazy} from "./pages/AboutPage/AboutPageLazy";
 import {MainPageLazy} from "./pages/MainPage/MainPageLazy";
+import {useTheme} from "./theme/useTheme";
 
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
+
 const App = () => {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
 
-    const toggleTheme = () => {
-        setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
-    }
+    const {theme, toggleTheme} = useTheme();
+
 
     return (
         <div className={`app ${theme}`}>
