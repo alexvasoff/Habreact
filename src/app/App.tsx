@@ -1,9 +1,9 @@
 import React, {Suspense} from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
-import './styles/index.scss';
-import {AboutPageLazy} from "./pages/AboutPage/AboutPageLazy";
-import {MainPageLazy} from "./pages/MainPage/MainPageLazy";
-import {useTheme} from "./theme/useTheme";
+import {useTheme} from "@/app/providers/ThemePovider";
+import {classNames} from "@/shared/lib/classNames/classNames";
+import {AboutPage} from "@/pages/AboutPage";
+import {MainPage} from "@/pages/MainPage";
 
 
 const App = () => {
@@ -12,14 +12,15 @@ const App = () => {
 
 
     return (
-        <div className={`app ${theme}`}>
+        // <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>Сменить тему</button>
             <Link to={'/about'}>О приложении</Link>
             <Link to={'/'}>Главная</Link>
             <Suspense fallback={<div>Загрузка...</div>}>
                 <Routes>
-                    <Route path={'/about'} element={<AboutPageLazy/>}/>
-                    <Route path={'/'} element={<MainPageLazy/>}/>
+                    <Route path={'/about'} element={<AboutPage/>}/>
+                    <Route path={'/'} element={<MainPage/>}/>
                 </Routes>
             </Suspense>
         </div>
