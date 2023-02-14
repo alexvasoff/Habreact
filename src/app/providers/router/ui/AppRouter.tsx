@@ -10,8 +10,13 @@ const AppRouter = () => {
                     <Route
                         key={path}
                         path={path}
-                        element={element}/>
-                    ))}
+                        element={(
+                            <div className={"wrapper"}>
+                                {element}
+                            </div>
+                        )}
+                    />
+                ))}
             </Routes>
         </Suspense>
     );
