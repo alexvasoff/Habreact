@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:i18next/recommended',
     'airbnb',
   ],
   parser: '@typescript-eslint/parser',
@@ -17,7 +18,7 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     'import/extensions': 'off',
@@ -35,6 +36,7 @@ module.exports = {
     'react/jsx-indent': [2, 4],
     'react/jsx-indent-props': [2, 4],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'i18next/no-literal-string': 2,
   },
   globals: {
     __IS_DEV__: true,
