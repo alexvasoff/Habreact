@@ -3,6 +3,7 @@ import type { Configuration as DevServConfiguration } from 'webpack-dev-server';
 export function buildWebpackServer(options: BuildOptions): DevServConfiguration {
     return {
         port: options.port,
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true,
     }
 }
