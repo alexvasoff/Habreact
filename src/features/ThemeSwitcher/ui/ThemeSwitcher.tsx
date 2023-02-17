@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ThemeSwitcher.module.scss';
 import { Theme, useTheme } from '@/app/providers/ThemePovider';
 import ThemeLight from '@/shared/assets/icons/theme-light.svg';
 import ThemeDark from '@/shared/assets/icons/theme-dark.svg';
@@ -14,7 +13,7 @@ export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
   const { className } = props;
   return (
-      <Button variable={ButtonVariables.CLEAR} onClick={() => toggleTheme()} className={classNames(cls.themeSwitcher, {}, [className])}>
+      <Button variable={ButtonVariables.CLEAR} onClick={() => toggleTheme()} className={classNames('', {}, [className])}>
           {theme === Theme.LIGHT ? <ThemeLight /> : <ThemeDark />}
       </Button>
   );
