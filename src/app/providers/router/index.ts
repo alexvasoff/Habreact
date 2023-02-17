@@ -1,2 +1,2 @@
-export { default } from "./ui/AppRouter";
-export {routeConfig} from "./config/routeConfig";
+export { default } from './ui/AppRouter';
+export { routeConfig } from './config/routeConfig';

@@ -1,6 +1,6 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './Button.module.scss'
-import {ButtonHTMLAttributes} from "react";
+import { ButtonHTMLAttributes } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
 
 export enum ButtonVariables {
     CLEAR = 'clear'
@@ -12,10 +12,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = (props: ButtonProps) => {
-    const {variable, children, ...otherProps} = props;
-    return (
-        <button {...otherProps} className={classNames(cls.button, {}, [props.className, cls[variable]])}>
-            {children}
-        </button>
-    );
+  const {
+    variable, children, className, ...otherProps
+  } = props;
+  return (
+      <button
+          type="button"
+          {...otherProps}
+          className={classNames(cls.button, {}, [className, cls[variable]])}
+      >
+          {children}
+      </button>
+  );
 };
