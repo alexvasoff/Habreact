@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -33,6 +34,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'warn',
     'no-unused-vars': 'warn',
     'react/jsx-props-no-spreading': 'warn',
+    'max-len': [1, { ignoreComments: true }],
     'react/jsx-indent': [2, 4],
     'react/jsx-indent-props': [2, 4],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
