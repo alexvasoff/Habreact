@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useTheme } from '@/app/providers/ThemePovider';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import AppRouter from './providers/router';
@@ -8,6 +8,8 @@ import { Sidebar } from '@/widgets/Sidebar';
 
 const App = () => {
   const { theme } = useTheme();
+
+  useEffect(() => { throw new Error(); }, []);
 
   return (
       <div className={classNames('app', {}, [theme])}>
