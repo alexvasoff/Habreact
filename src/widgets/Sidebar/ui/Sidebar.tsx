@@ -8,6 +8,7 @@ import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 interface SidebarProps {
     className?: string
 }
+
 export const Sidebar = (props: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -18,8 +19,8 @@ export const Sidebar = (props: SidebarProps) => {
   };
 
   return (
-      <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-          <Button onClick={toggleCollapsed}>Collapse</Button>
+      <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+          <Button data-testid="toggle-btn" onClick={toggleCollapsed}>Collapse</Button>
           <div className={cls.switchers}>
               <ThemeSwitcher />
               <LanguageSwitcher />
