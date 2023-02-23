@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     },
     "outDir": "./dist/",
     "noImplicitAny": true,
@@ -18,5 +18,8 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "config/jest/setupTests.ts"
+  ]
 }
