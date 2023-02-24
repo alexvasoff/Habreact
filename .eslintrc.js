@@ -24,6 +24,7 @@ module.exports = {
     'no-shadow': 'off',
     'no-restricted-exports': 'off',
     'no-underscore-dangle': 'off',
+    'arrow-body-style': 'off',
     'import/no-extraneous-dependencies': 'warn',
     'no-unused-vars': 'warn',
     'react/jsx-props-no-spreading': 'warn',

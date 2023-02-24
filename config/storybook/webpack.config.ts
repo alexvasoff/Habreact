@@ -18,7 +18,9 @@ export default function webpackConfig({ config }: {config: webpack.Configuration
     port: 3001,
   };
 
+  // eslint-disable-next-line no-param-reassign
   config.resolve = buildResolve(options);
+  // eslint-disable-next-line no-param-reassign
   config.module.rules = buildLoaders(options);
 
   return config;
