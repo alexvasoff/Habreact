@@ -9,8 +9,6 @@ import { Sidebar } from '@/widgets/Sidebar';
 const App = () => {
   const { theme } = useTheme();
 
-  useEffect(() => { throw new Error(); }, []);
-
   return (
       <div className={classNames('app', {}, [theme])}>
           <Suspense fallback="">
