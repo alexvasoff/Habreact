@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
@@ -18,9 +19,11 @@ export const Sidebar = (props: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
+  const { t } = useTranslation();
+
   return (
       <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-          <Button data-testid="toggle-btn" onClick={toggleCollapsed}>Collapse</Button>
+          <Button data-testid="toggle-btn" onClick={toggleCollapsed}>{t('<->')}</Button>
           <div className={cls.switchers}>
               <ThemeSwitcher />
               <LanguageSwitcher />
