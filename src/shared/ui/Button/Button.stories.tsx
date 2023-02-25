@@ -48,22 +48,22 @@ BackgroundInverted.args = {
 };
 
 /* SIZES */
-export const ButtonM = Template.bind({});
-ButtonM.args = {
+export const OutlineSizeM = Template.bind({});
+OutlineSizeM.args = {
   children: 'Test',
   variable: ButtonVariables.OUTLINE,
   size: ButtonSize.M,
 };
 
-export const ButtonL = Template.bind({});
-ButtonL.args = {
+export const OutlineSizeL = Template.bind({});
+OutlineSizeL.args = {
   children: 'Test',
   variable: ButtonVariables.OUTLINE,
   size: ButtonSize.L,
 };
 
-export const ButtonXL = Template.bind({});
-ButtonXL.args = {
+export const OutlineSizeXL = Template.bind({});
+OutlineSizeXL.args = {
   children: 'Test',
   variable: ButtonVariables.OUTLINE,
   size: ButtonSize.XL,
