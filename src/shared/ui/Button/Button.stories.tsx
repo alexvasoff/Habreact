@@ -15,6 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+/* RAW VARIABLES */
 export const Clear = Template.bind({});
 Clear.args = {
   children: 'Test',
@@ -46,6 +47,29 @@ BackgroundInverted.args = {
   variable: ButtonVariables.BACKGROUND_INVERT,
 };
 
+/* SIZES */
+export const ButtonM = Template.bind({});
+ButtonM.args = {
+  children: 'Test',
+  variable: ButtonVariables.OUTLINE,
+  size: ButtonSize.M,
+};
+
+export const ButtonL = Template.bind({});
+ButtonL.args = {
+  children: 'Test',
+  variable: ButtonVariables.OUTLINE,
+  size: ButtonSize.L,
+};
+
+export const ButtonXL = Template.bind({});
+ButtonXL.args = {
+  children: 'Test',
+  variable: ButtonVariables.OUTLINE,
+  size: ButtonSize.XL,
+};
+
+/* SQUARE BUTTONS  */
 export const SquareM = Template.bind({});
 SquareM.args = {
   children: '>',
