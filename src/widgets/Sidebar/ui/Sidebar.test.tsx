@@ -1,16 +1,16 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
-import { renderWithTranslation } from '../../../shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import { renderComponent } from '../../../shared/lib/tests/renderComponent/renderComponent';
 
 describe('Sidebar component', () => {
   test('Sidebar', () => {
-    renderWithTranslation(
+    renderComponent(
         <Sidebar />,
     );
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
   test('Toggle Sidebar', () => {
-    renderWithTranslation(<Sidebar />);
+    renderComponent(<Sidebar />);
     const toggleBtn = screen.getByTestId('toggle-btn');
     fireEvent.click(toggleBtn);
     expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
