@@ -20,6 +20,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
+    // https://www.npmjs.com/package/@statoscope/webpack-plugin - альтернатива
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,

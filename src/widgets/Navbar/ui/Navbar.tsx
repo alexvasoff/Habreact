@@ -11,7 +11,6 @@ export const Navbar = (props: NavbarProps) => {
   return (
       <div className={classNames(cls.navbar, {}, [className])}>
           <div className={cls.appName} />
-
       </div>
   );
 };

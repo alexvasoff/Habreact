@@ -4,13 +4,13 @@ import { themeDecorators } from '@/shared/config/storybook/themeDecorators/theme
 import { Theme } from '@/app/providers/ThemePovider';
 import { AppLink, AppLinkTheme } from './AppLink';
 
-export default {
-  title: 'shared/AppLink',
-  component: AppLink,
-  args: {
-    to: '/',
-  },
-} as ComponentMeta<typeof AppLink>;
+// export default {
+//   title: 'shared/AppLink',
+//   component: AppLink,
+//   args: {
+//     to: '/',
+//   },
+// } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 

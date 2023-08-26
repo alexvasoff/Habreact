@@ -27,8 +27,15 @@ export const Sidebar = (props: SidebarProps) => {
 
   return (
       <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-          <Button variable={ButtonVariables.BACKGROUND_INVERT} square size={ButtonSize.L} className={cls.collapseBtn} data-testid="toggle-btn" onClick={toggleCollapsed}>
-              { collapsed ? '>' : '<' }
+          <Button
+              variable={ButtonVariables.BACKGROUND_INVERT}
+              square
+              size={ButtonSize.L}
+              className={cls.collapseBtn}
+              data-testid="toggle-btn"
+              onClick={toggleCollapsed}
+          >
+              {collapsed ? '>' : '<'}
           </Button>
           <div className={cls.links}>
               <AppLink className={cls.item} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>

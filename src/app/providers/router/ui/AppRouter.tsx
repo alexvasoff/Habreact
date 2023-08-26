@@ -14,7 +14,7 @@ const AppRouter = () => (
                         <div className="wrapper">
                             {element}
                         </div>
-                        )}
+                    )}
                 />
             ))}
         </Routes>
