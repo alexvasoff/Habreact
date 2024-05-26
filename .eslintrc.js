@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'airbnb', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:i18next/recommended',
+    'airbnb',
+    'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -48,9 +52,11 @@ module.exports = {
     __IS_DEV__: true,
   },
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     rules: {
       'i18next/no-literal-string': 0,
+      'import/no-extraneous-dependencies': 'off',
+      'react/jsx-props-no-spreading': 'off',
     },
   }],
 };
