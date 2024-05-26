@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     'import/extensions': 'off',
     'react/function-component-definition': 'off',
@@ -27,9 +27,11 @@ module.exports = {
     'arrow-body-style': 'off',
     'import/no-extraneous-dependencies': 'warn',
     'no-unused-vars': 'warn',
+    'no-param-reassign': 'off',
     'react/jsx-props-no-spreading': 'warn',
     'max-len': [1, {
       ignoreComments: true,
+      code: 110,
     }],
     'react/jsx-indent': [2, 4],
     'react/jsx-indent-props': [2, 4],
@@ -37,6 +39,10 @@ module.exports = {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }],
     'i18next/no-literal-string': 2,
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
   },
   globals: {
     __IS_DEV__: true,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Sidebar } from './Sidebar';
-import { themeDecorators } from '@/shared/config/storybook/themeDecorators/themeDecorators';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemePovider';
 
 export default {
@@ -19,4 +19,4 @@ Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [themeDecorators(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

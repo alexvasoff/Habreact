@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Button, ButtonSize, ButtonVariables } from './Button';
-import { themeDecorators } from '@/shared/config/storybook/themeDecorators/themeDecorators';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemePovider';
 
 export default {
@@ -22,6 +22,12 @@ Clear.args = {
   variable: ButtonVariables.CLEAR,
 };
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'Test',
+  variable: ButtonVariables.CLEAR_INVERTED,
+};
+
 export const Default = Template.bind({});
 Default.args = {
   children: 'Test',
@@ -33,7 +39,7 @@ Outline.args = {
   variable: ButtonVariables.OUTLINE,
 };
 
-Outline.decorators = [themeDecorators(Theme.DARK)];
+Outline.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Background = Template.bind({});
 Background.args = {

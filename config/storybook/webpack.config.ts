@@ -1,8 +1,9 @@
-import path = require('path');
+import path from 'path';
 import webpack from 'webpack';
 import { BuildMode, BuildOptions, BuildPaths } from '../build/types/config';
 import { buildResolve } from '../build/buildResolve';
 import { buildLoaders } from '../build/buildLoaders';
+import { setDefinePlugin } from '../build/buildPlugins';
 
 export default function webpackConfig({ config }: {config: webpack.Configuration}) {
   const paths: BuildPaths = {
@@ -22,6 +23,7 @@ export default function webpackConfig({ config }: {config: webpack.Configuration
   config.resolve = buildResolve(options);
   // eslint-disable-next-line no-param-reassign
   config.module.rules = buildLoaders(options);
+  config.plugins.push(setDefinePlugin(options));
 
   return config;
 }
