@@ -5,6 +5,7 @@ import cls from './Navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonVariables } from '@/shared/ui/Button/Button';
 import { Portal } from '@/shared/ui/Portal/Portal';
+import { LoginModal } from '@/features/Login';
 
 interface NavbarProps {
     className?: string
@@ -28,9 +29,7 @@ export const Navbar = (props: NavbarProps) => {
               {t('Войти')}
           </Button>
           <Portal>
-              <Modal isOpen={isOpen} onClose={onCloseModal}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt porro sunt unde?
-              </Modal>
+              <LoginModal isOpen={isOpen} onClose={onCloseModal} />
           </Portal>
       </div>
   );

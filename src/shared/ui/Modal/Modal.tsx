@@ -4,7 +4,7 @@ import React, {
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
-interface ModalProps {
+export interface ModalProps {
     className?: string
     children?: ReactNode
     isOpen?: boolean
