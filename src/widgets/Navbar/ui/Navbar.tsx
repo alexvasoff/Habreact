@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Modal } from '@/shared/ui/Modal/Modal';
 import cls from './Navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonVariables } from '@/shared/ui/Button/Button';

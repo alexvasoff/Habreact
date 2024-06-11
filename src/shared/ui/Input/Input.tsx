@@ -2,7 +2,7 @@ import React, { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputTypeAttribute>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -12,7 +12,11 @@ interface InputProps extends HTMLInputProps {
 }
 export const Input = (props: InputProps) => {
   const {
-    className, label, value, onChange,
+    className,
+    label,
+    value,
+    onChange,
+    ...otherProps
   } = props;
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +30,7 @@ export const Input = (props: InputProps) => {
               value={value}
               onChange={onChangeHandler}
               className={cls.input}
+              {...otherProps}
           />
       </div>
   );
