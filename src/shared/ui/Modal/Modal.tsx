@@ -5,16 +5,25 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
 export interface ModalProps {
-    className?: string
-    children?: ReactNode
-    isOpen?: boolean
-    onClose?: () => void
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
   const {
-    className, children, isOpen = false, onClose,
+    className, children, isOpen = false, onClose, lazy,
   } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const mods = {
     [cls.opened]: isOpen,
@@ -46,6 +55,10 @@ export const Modal = (props: ModalProps) => {
       window.removeEventListener('keyup', onKeyUp);
     };
   }, [isOpen, onKeyUp]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
       <div className={classNames(cls.modal, mods, [className])}>
