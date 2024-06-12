@@ -8,6 +8,7 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
+server.use(jsonServer.bodyParser);
 
 server.use(async (req, res, next) => {
   await new Promise((resolve) => {
@@ -16,15 +17,7 @@ server.use(async (req, res, next) => {
   next();
 });
 
-// eslint-disable-next-line consistent-return
-server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json('Authentication required');
-  }
-  next();
-});
-
-server.post((req, res, next) => {
+server.post('/login', (req, res, next) => {
   const { username, password } = req.body;
   const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, './db.json'), 'UTF-8'));
   const { users } = db;
@@ -34,6 +27,14 @@ server.post((req, res, next) => {
     return res.status(403).json('Authentication required');
   }
   return res.json(userFromDb);
+});
+
+// eslint-disable-next-line consistent-return
+server.use((req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(403).json('Authentication required');
+  }
+  next();
 });
 
 server.use(router);

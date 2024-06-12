@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
       <div>
           {t('Главная')}
-          <Input />
+          <Input autoFocus />
           <Counter />
       </div>
   );
