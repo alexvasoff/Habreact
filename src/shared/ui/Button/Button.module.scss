@@ -26,7 +26,6 @@
   background: var(--bg-color);
   color: var(--primary-color);
   border: none;
-
 }
 
 .backgroundInvert {
@@ -69,4 +68,9 @@
 
 .size_xl {
   font: var(--font-xl)
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
 }

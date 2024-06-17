@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemePovider';
 import { Navbar } from './Navbar';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'widgets/Navbar',
@@ -20,3 +21,7 @@ Light.args = {};
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithAuth = Template.bind({});
+WithAuth.args = {};
+WithAuth.decorators = [StoreDecorator({ user: { authData: { email: 'admin', id: '1' } } })];

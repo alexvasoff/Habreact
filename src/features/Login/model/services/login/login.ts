@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { User } from '@/entities/User';
+import { User, userActions } from '@/entities/User';
+import { USER_KEY } from '@/shared/const/localStorage';
 
 interface FetchLoginProps {
   email: string;
@@ -17,10 +18,13 @@ export const fetchLogin = createAsyncThunk<User, FetchLoginProps, { rejectValue:
         throw new Error('no data');
       }
 
+      localStorage.setItem(USER_KEY, JSON.stringify(response.data));
+      thunkAPI.dispatch(userActions.setUser(response.data));
+
       return response.data;
     } catch (e) {
       console.log(e);
-      return thunkAPI.rejectWithValue('error');
+      return thunkAPI.rejectWithValue('Пользователь не найден');
     }
   },
 );

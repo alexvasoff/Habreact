@@ -7,6 +7,7 @@ import { Button } from '@/shared/ui/Button/Button';
 import { loginActions } from '@/features/Login';
 import { loginSelector } from '@/features/Login/model/selectors/loginSelector/loginSelector';
 import { fetchLogin } from '@/features/Login/model/services/login/login';
+import { Text } from '@/shared/ui/Text/Text';
 
 interface LoginFormProps {
     className?: string
@@ -16,7 +17,9 @@ export const LoginForm = (props: LoginFormProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { email, password } = useSelector(loginSelector);
+  const {
+    email, password, error, isLoading,
+  } = useSelector(loginSelector);
 
   const onEmailChange = (email: string) => {
     dispatch(loginActions.setEmail(email));
@@ -32,11 +35,11 @@ export const LoginForm = (props: LoginFormProps) => {
 
   return (
       <div className={classNames(cls.loginForm, {}, [className])}>
-          <p>{email}</p>
+          <Text title={t('Авторизация')} />
+          {error && <Text text={error} theme="error" />}
           <Input onChange={onEmailChange} value={email} label="Введите имя" />
-          <p>{password}</p>
-          <Input onChange={onPasswordChange} label="Введите пароль" />
-          <Button className={cls.button} onClick={onLoginClick}>{t('Войти')}</Button>
+          <Input onChange={onPasswordChange} value={password} label="Введите пароль" type="password" />
+          <Button className={cls.button} onClick={onLoginClick} disabled={isLoading}>{t('Войти')}</Button>
       </div>
   );
 };
